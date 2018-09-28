@@ -68,11 +68,11 @@ string translateCode(string code)
 		{
 			nextChar += current;
 		}
-		else if (current == '…')
+		else if (current == 'â€¦')
 		{
 			nextChar += "...";
 		}
-		else if (current == '‘' || current == '’')
+		else if (current == 'â€˜' || current == 'â€™')
 		{
 			nextWord += (getChar(nextChar) + "'");
 			nextChar = "";
@@ -205,24 +205,24 @@ int main()
 	if (option == 1)
 	{
 		string plain;
-		plain = importFile("C:\\Users\\Karen\\Documents\\ProgramProjects\\translator\\alphabet.txt");
+		plain = importFile("./alphabet.txt");
 		cout << plain;
 
 		//plain = the entire contents of alphabet.txt
 		string output = encodePlainText(plain);
-		exportFile("C:\\Users\\Karen\\Documents\\ProgramProjects\\translator\\encoded.txt", output);
+		exportFile("./encoded.txt", output);
 		cout << output;
 	}
 	
 	if (option == 2)
 	{
 		string code;
-		code = importFile("C:\\Users\\Karen\\Documents\\ProgramProjects\\translator\\encoded.txt");
+		code = importFile("./encoded.txt");
 		cout << code;
 
 		//now code = the entire contents of 'encoded.txt'
 		string output = translateCode(code);
-		exportFile("C:\\Users\\Karen\\Documents\\ProgramProjects\\translator\\alphabet.txt", output);
+		exportFile("./alphabet.txt", output);
 		cout << output;
 	}
 } 
